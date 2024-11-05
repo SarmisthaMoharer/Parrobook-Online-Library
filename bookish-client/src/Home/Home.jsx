@@ -3,7 +3,7 @@ import Banner from "../components/Banner"
 import BestSellerBook from "./BestSellerBook"
 import FavBook from "./FavBook"
 import OtherBooks from "./OtherBooks"
-import PromoBanner from "./PromoBanner"
+//import PromoBanner from "./PromoBanner"
 import Review from "./Review"
 
 
@@ -14,7 +14,7 @@ const Home = () => {
       <Banner/>
       <BestSellerBook/>
       <FavBook/>
-      <PromoBanner/>
+      {/*<PromoBanner/>*/}
       <OtherBooks/>
       <Review/>
       

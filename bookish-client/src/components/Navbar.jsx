@@ -25,7 +25,7 @@ const Navbar = () => {
             setIsSticky(false);
           }
         }
-      
+
         window.addEventListener('scroll', hadlesScroll);
         return () => {
           window.removeEventListener('scroll', hadlesScroll);
@@ -38,6 +38,7 @@ const Navbar = () => {
       {link: 'Shop',path:"/shop"},
       {link: 'Sell Your Book',path:"/admin/dashboard"},
       {link: 'Blog',path:"/blog"},
+      {link: 'Profile',path:"/user/dashboard"},
     ];
     return (
     <header className='w-full bg-gradient-to-b from-indigo-200 via-purple-300 to-fuchsia-200 fixed top-0 left-0 right-0 transition-all ease-in duration-300'>

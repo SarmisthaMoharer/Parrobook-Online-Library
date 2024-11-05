@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Sidebar } from "flowbite-react";
-import { BiBuoy } from "react-icons/bi";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineCloudUpload, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
-import userImg from "/src/assets/profil.avif"
+//import { BiBuoy } from "react-icons/bi";
+import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineCloudUpload, HiShoppingBag, HiTable, HiUser, } from "react-icons/hi";
+//import userImg from "/src/assets/profil.avif"
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SideBar = () => {

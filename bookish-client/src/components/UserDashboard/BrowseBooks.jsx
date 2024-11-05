@@ -1,19 +1,30 @@
-//import React from 'react'
-
 import { useEffect, useState } from "react"
 
 import { Card } from "flowbite-react";
-import { Link } from "react-router-dom";
-
-const Shop = () => {
-  const[books,setBooks] = useState([]);
+const BrowseBooks = () => {
+    const [search, setSearch] = useState('');
+    const[books,setBooks] = useState([]);
   useEffect(() => {
     fetch("http://localhost:8000/all-books").then(res => res.json()).then(data => setBooks(data));
   },[]);
   return (
-    <div className="mt-28 px-4 lg:px-24">
-      <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-green-300 via-emerald-500 to-teal-700 bg-clip-text text-transparent">All Books are here</h2>
-
+    <div className='px-4 my-12'>
+      <div className="p-8 bg-gray-50 min-h-screen">
+      <h2 className="text-3xl font-bold text-blue-800 mb-6">Browse Books</h2>
+      <input
+        type="text"
+        placeholder="Search for a book..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="p-2 border border-blue-300 rounded w-full mb-6"
+      />
+      {/*<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="p-4 bg-white rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold text-blue-700">Book Title 1</h3>
+          <p className="text-gray-600">Author: Jane Doe</p>
+        </div>
+         Add more book cards here 
+      </div>*/}
       <div className="grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gris-cols-1">
         {
           books.map(book => 
@@ -37,7 +48,8 @@ const Shop = () => {
         }
       </div>
     </div>
+    </div>
   )
 }
 
-export default Shop
+export default BrowseBooks

@@ -17,6 +17,12 @@ import Logout from "../components/Logout";
 //import UserDetails from "../components/dashboard/PendingUserDetails";
 import PendingUserDetails from "../components/dashboard/PendingUserDetails";
 import BorrowRequest from "../components/dashboard/BorrowRequest";
+import UserDashboardLayout from "../components/UserDashboard/UserDashboardLayout";
+import UserDashboard from "../components/UserDashboard/UserDashboard";
+import BrowseBooks from "../components/UserDashboard/BrowseBooks";
+import BorrowedBooks from "../components/UserDashboard/BorrowedBooks";
+import Profile from "../components/UserDashboard/Profile";
+import Notifications from "../components/UserDashboard/Notifications";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -92,7 +98,33 @@ import BorrowRequest from "../components/dashboard/BorrowRequest";
     {
       path: "logout",
       element: <Logout/>,
-    }
+    },
+    {
+      path: "/user/dashboard",
+      element:< UserDashboardLayout/>,
+      children: [
+        {
+          path: "/user/dashboard",
+          element:<PrivateRoute><UserDashboard/></PrivateRoute>,
+        },
+        {
+          path: "/user/dashboard/browse-books",
+          element:<Shop/>,
+        },
+        {
+          path: "/user/dashboard/borrowed-books",
+          element:<BorrowedBooks/>,
+        },
+        {
+          path: "/user/dashboard/profile",
+          element:<Profile/>,
+        },
+        {
+          path: "/user/dashboard/notifications",
+          element:<Notifications/>,
+        },   
+      ],
+    },
   ]);
 
   export default router;

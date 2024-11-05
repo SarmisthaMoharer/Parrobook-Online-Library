@@ -8,7 +8,7 @@ const BestSellerBook = () => {
     },[])
   return (
     <div className=''>
-      <BookCards books={books} headline="Best Seller Books"/>
+      <BookCards books={books} headline="Best Books"/>
     </div>
   )
 }
