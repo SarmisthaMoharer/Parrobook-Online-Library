@@ -4,7 +4,7 @@ import BookCards from '../components/BookCards';
 const OtherBooks = () => {
     const [ books , setBooks ] = useState([]) ;
     useEffect(() => {
-        fetch("http://localhost:8000/all-books").then(res => res.json()).then(data => setBooks(data.slice(6,14)))
+        fetch("http://localhost:8000/all-books").then(res => res.json()).then(data => setBooks(data.slice(6,17)))
     },[])
   return (
     <div className=''>
